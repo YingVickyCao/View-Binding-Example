@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         binding.redBtn.setOnClickListener(view -> clickRedBtn());
         binding.redBtn.setText("Red Button");
 
-        binding.greenBtn.setOnClickListener(view -> clickGreenBtn());
-        binding.blueBtn.setOnClickListener(view -> clickBlueBtn());
+//        binding.greenBtn.setOnClickListener(view -> clickGreenBtn());
+//        binding.blueBtn.setOnClickListener(view -> clickBlueBtn());
         binding.pinkBtn.setOnClickListener(view -> clickPinkBtn());
 
         // ViewBing 和 findViewById 可以共存。因此，可以逐渐替换
@@ -50,5 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void clickYellowBtn() {
         Toast.makeText(this, "Click Yellow Button", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        binding = null;
     }
 }

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:orientation="vertical">
 
     <TextView
@@ -12,10 +14,11 @@
         android:text="Use View Binding in Fragment" />
 
     <LinearLayout
-        android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <Button
@@ -25,12 +28,14 @@
             android:layout_gravity="end"
             android:text="Vote Tom" />
 
-        <Button
+        <EditText
             android:id="@+id/voteJerry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="Vote Jerry" />
+            android:gravity="center"
+            android:text="Vote Jerry"
+            tools:viewBindingType="TextView" />
     </LinearLayout>
 
 </RelativeLayout>
