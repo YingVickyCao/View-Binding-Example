@@ -42,10 +42,12 @@
     <!--            android:layout_height="wrap_content"-->
     <!--            android:backgroundTint="#0000ff" />-->
 
-    <!-- TODO: -->
     <include
         android:id="@+id/includes"
         layout="@layout/included_layout" />
+
+<!--    <include-->
+<!--        layout="@layout/merged_layout" />-->
 
     <include
         android:id="@+id/merge_1"
