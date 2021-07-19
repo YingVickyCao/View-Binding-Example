@@ -1,5 +1,7 @@
 # View-Binding-Example
 
+Use View Binding to replace findViewById or ButterKnife.  
+
 # 1 Requirement
 Android Studio 3.6 and later.  
 Android Gradle Plugin 3.6 and later.
@@ -193,7 +195,7 @@ A :
     ...
 </LinearLayout>
 ```
-# 4 原理
+# 4 How does View Binding Work?
 
 ![data_bind_dir](images/data_bind_dir.jpg)    
 activity_main.xml -> ActivityMainBinding.java
