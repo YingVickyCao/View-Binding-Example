@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.hades.example.android.view_binding_example.R;
+import com.hades.example.android.view_binding_example.databinding.RecyclerviewDummyBinding;
 
 /**
  * A fragment representing a list of Items.
@@ -21,7 +22,7 @@ import com.hades.example.android.view_binding_example.R;
 public class DummyRecyclerViewFragment extends Fragment implements IItemClickAction {
     private static final String TAG = DummyRecyclerViewFragment.class.getSimpleName();
 
-    private RecyclerView rv;
+    RecyclerviewDummyBinding binding;
     private DummyRecyclerViewAdapter mAdapter;
     private LinearLayoutManager mLinearLayoutManager;
 
@@ -30,20 +31,27 @@ public class DummyRecyclerViewFragment extends Fragment implements IItemClickAct
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.widget_recyclerview_dummy, container, false);
-        rv = view.findViewById(R.id.list);
-        initList(view);
+        View view = inflater.inflate(R.layout.recyclerview_dummy, container, false);
+        binding = RecyclerviewDummyBinding.bind(view);
+        initList();
         return view;
     }
 
-    private void initList(View view) {
-        rv.setHasFixedSize(false);
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
+    private void initList() {
+        binding.list.setHasFixedSize(false);
         mLinearLayoutManager = new LinearLayoutManager(getActivity());
         mLinearLayoutManager.setOrientation(RecyclerView.VERTICAL);
-        rv.setLayoutManager(mLinearLayoutManager);
-        rv.addItemDecoration(new SimpleDividerItemDecoration(getContext(), R.drawable.drawable_shape_4_divider_vertical));
+        binding.list.setLayoutManager(mLinearLayoutManager);
+        binding.list.addItemDecoration(new SimpleDividerItemDecoration(getContext(), R.drawable.drawable_shape_4_divider_vertical));
         mAdapter = new DummyRecyclerViewAdapter(DummyItems.ITEMS(), this);
-        rv.setAdapter(mAdapter);
+        binding.list.setAdapter(mAdapter);
     }
 
     @Override
