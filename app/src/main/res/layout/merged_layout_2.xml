@@ -5,8 +5,8 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/blueBtn"
+        android:id="@+id/pinkBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#0000ff" />
+        android:backgroundTint="#ff00ff" />
 </merge>

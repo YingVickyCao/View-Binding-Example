@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <TextView
@@ -12,11 +13,11 @@
         android:text="Use View Binding in Fragment" />
 
     <LinearLayout
-        android:layout_marginTop="60dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/voteTom"
@@ -25,7 +26,8 @@
             android:layout_gravity="end"
             android:text="Vote Tom" />
 
-        <Button
+        <EditText
+            tools:viewBindingType="TextView"
             android:id="@+id/voteJerry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,4 +35,4 @@
             android:text="Vote Jerry" />
     </LinearLayout>
 
-</RelativeLayout>
+</FrameLayout>
