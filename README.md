@@ -184,7 +184,7 @@ mergedLayout2Binding.pinkBtn.setOnClickListener(view -> clickPinkBtn());
 ## Q : Data Binding vs View Binding?
 A :  
 
-Data Binding includes View Binding.
+View Binding is a subset of Data Binding.
 
 ## Q : I want a layout file to be ignored while generating binding classes?
 A : 
