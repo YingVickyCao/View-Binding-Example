@@ -1,12 +1,12 @@
 # View-Binding-Example
 
 # 1 Requirement
-Android Studio 3.6 and later.
+Android Studio 3.6 and later.  
 Android Gradle Plugin 3.6 and later.
 
 # 2 Configure
 
-Available in Android Gradle Plugin 3.6,not need library.
+Available in Android Gradle Plugin 3.6, not need library.
 
 
 ```groovy
@@ -69,7 +69,7 @@ VoteFragment.java
     }
 ```
 
-## Use View Binding in Include ?
+## Use View Binding in Include
 MainActivity.java  
 ```xml
 <!-- activity_main.xml -->
@@ -84,7 +84,6 @@ MainActivity.java
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/included_btns_1"
     android:orientation="vertical">
 
     <Button
@@ -196,7 +195,7 @@ A :
 ```
 # 4 原理
 
-![data_bind_dir](images/data_bind_dir.jpg)
+![data_bind_dir](images/data_bind_dir.jpg)    
 activity_main.xml -> ActivityMainBinding.java
 
 
