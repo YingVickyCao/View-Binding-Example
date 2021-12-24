@@ -1,15 +1,15 @@
 # View-Binding-Example
 
-Use View Binding to replace findViewById or ButterKnife.  
+Use View Binding to replace findViewById or ButterKnife.
 
 # 1 Requirement
+
 Android Studio 3.6 and later.  
 Android Gradle Plugin 3.6 and later.
 
 # 2 Configure
 
 Available in Android Gradle Plugin 3.6, not need library.
-
 
 ```groovy
 // // Android Gradle Plugin 3.6
@@ -34,7 +34,9 @@ android{
 - If view has id, it will in Biding java file.
 
 ## Use ViewBinding in Activity
-MainActivity.java  
+
+MainActivity.java
+
 ```java
  @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,11 @@ MainActivity.java
         setContentView(rootView);
     }
 ```
+
 ## Use ViewBinding in Fragment
-VoteFragment.java  
+
+VoteFragment.java
+
 ```java
  @Nullable
     @Override
@@ -72,7 +77,9 @@ VoteFragment.java
 ```
 
 ## Use View Binding in Include
-MainActivity.java  
+
+MainActivity.java
+
 ```xml
 <!-- activity_main.xml -->
 <include
@@ -101,8 +108,11 @@ MainActivity.java
 // Include
 binding.includes.greenBtn.setOnClickListener(view -> clickGreenBtn());
 ```
+
 ## Use View Binding in Merge ?
+
 How to View Binding in below merge code?
+
 ```xml
 <!-- activity_main.xml -->
 <include-->
@@ -110,7 +120,7 @@ How to View Binding in below merge code?
 ```
 
 ```xml
-<!-- merged_layout.xml -->  
+<!-- merged_layout.xml -->
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/included_btns_2"
@@ -127,6 +137,7 @@ How to View Binding in below merge code?
 ```
 
 Way 1 : Recommended
+
 ```xml
 <!-- activity_main.xml -->
  <include
@@ -151,6 +162,7 @@ binding.merge1.blueBtn.setOnClickListener(view -> clickBlueBtn());
 ```
 
 Way 2 : Depressed
+
 ```xml
 <!-- activity_main.xml -->
 <include
@@ -181,13 +193,17 @@ private MergedLayout2Binding mergedLayout2Binding;
 mergedLayout2Binding = mergedLayout2Binding.bind(rootView);
 mergedLayout2Binding.pinkBtn.setOnClickListener(view -> clickPinkBtn());
 ```
+
 ## Q : Data Binding vs View Binding?
-A :  
+
+A :
 
 View Binding is a subset of Data Binding.
 
 ## Q : I want a layout file to be ignored while generating binding classes?
-A : 
+
+A :
+
 ```xml
 <LinearLayout
         ...
@@ -195,13 +211,15 @@ A :
     ...
 </LinearLayout>
 ```
+
 # 4 How does View Binding Work?
 
-![data_bind_dir](images/data_bind_dir.jpg)    
+![data_bind_dir](images/data_bind_dir.jpg)  
 activity_main.xml -> ActivityMainBinding.java
 
+TBD
 
 Refs:
+
 - https://developer.android.google.cn/topic/libraries/view-binding
 - https://medium.com/androiddevelopers/use-view-binding-to-replace-findviewbyid-c8394271fc
-
